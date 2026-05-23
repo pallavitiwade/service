@@ -2,7 +2,12 @@
 
 export interface Itodo{
      todoItem: string;
-     isComplited:boolean;
-    todoId: number;
+    todoId: string;
 
 }
+
+export interface ItodoRes{
+    msg:string;
+    data:Itodo
+}
+
