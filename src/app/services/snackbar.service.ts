@@ -13,7 +13,7 @@ export class SnackbarService {
   openSnackBar(msg:string){
     this._snackBar.open(msg, 'close' ,{
       horizontalPosition:'center',
-      verticalPosition:'top',
+      verticalPosition:'bottom',
       duration:3000
     })
   }

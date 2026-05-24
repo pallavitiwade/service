@@ -12,7 +12,11 @@ import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { GetConfirmComponent } from './get-confirm/get-confirm.component'
 import {MatDialogModule} from '@angular/material/dialog';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
+import { StudentTableComponent } from './components/student-table/student-table.component';
+import { StudentFormComponent } from './components/student-form/student-form.component';
+import { StdConfirmComponent } from './components/std-confirm/std-confirm.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -23,18 +27,22 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     TodoListComponent,
     TodoDashboardComponent,
     GetConfirmComponent,
+    StudentDashboardComponent,
+    StudentTableComponent,
+    StudentFormComponent,
+    StdConfirmComponent,
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatButtonModule,
     HttpClientModule,
     FormsModule,
     MatSnackBarModule,
     MatDialogModule,
-            MatIconModule,
+      MatIconModule,
+      MatCardModule
 
   ],
   providers: [],
