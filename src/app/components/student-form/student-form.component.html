@@ -1,0 +1,33 @@
+
+<div class="card mb-4 mb-4 mb-md-0">
+    <div class="card-body">
+        <h4 class="text-center">
+            {{isInEditMode ? 'Update':'Add Todo'}}
+        </h4>
+        <form #stdForm="ngForm" (ngSubmit)="onTodoSubmit()">
+            <div class="form-group">
+                <label for="Fullname">Fullname</label>
+                <input name="Fullname" required ngModel type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input name="Email" required ngModel type="text" class="form-control">
+            </div>
+           <div class="form-group">
+                <label for="contact">contact</label>
+                <input name="contact" required ngModel type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                 <label for="IsActive">IsActive</label>
+        <select type="text" required ngModel class="form-control">
+            <option value="true">yes</option>
+            <option value="false">No</option>
+        </select>
+
+            </div>
+            <button type="submit" [disabled]="stdForm.invalid" *ngIf="!isInEditMode" mat-raised-button color="primary"
+                class="w-100">Add Todo</button>
+            <button type="button" *ngIf="isInEditMode" mat-raised-button color="warn" class="w-100" [disabled]="stdForm.invalid" (click)="onUpdate()">Update</button>
+        </form>
+    </div>
+</div>
