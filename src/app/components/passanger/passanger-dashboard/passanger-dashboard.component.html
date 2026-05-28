@@ -1,0 +1,31 @@
+<div class="container">
+<div class="row">
+    <div class="col-12">
+     <app-passanger-count
+     [checkInCount]="checkInArr.length"
+     [totalCount]="passArr.length"
+     
+     ></app-passanger-count>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li
+                    *ngFor="let pass of passArr"
+                    class="list-group-item">
+                        {{pass.fullname}}
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <app-passanger-card
+        (emitCheckInFlag)="getRemoveFlag($event)"
+        [passObj]="pass"
+        *ngFor="let pass of passArr"></app-passanger-card>
+    </div>
+</div>
+</div> 
+
