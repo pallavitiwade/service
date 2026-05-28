@@ -1,0 +1,31 @@
+<mat-card class="mb-3">
+    <mat-card-title>
+        <!-- <h5 *ngIf="!isInEditMode">{{passObj.fullname}}</h5> -->
+      
+        <div class="form-group" [ngClass]="{
+            checkedIn:passObj.checkedIn,
+           fullnameControl:!isInEditMode
+        }">
+            <input #fullname
+             [value]="passObj.fullname" [disabled]="!isInEditMode" type="text" class="form-control" />
+        </div>
+    </mat-card-title>
+    <mat-card-content>
+        <p>Check In Date : {{passObj.checkInDate ? (passObj.checkInDate | date) : 'Not checked in Yet'}}</p>
+        <p>Children : {{passObj.children ? passObj.children.length:0}}</p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+        <button mat-raised-button *ngIf="!isInEditMode" (click)="isInEditMode=true" color="primary">Edit</button>
+        <button mat-raised-button *ngIf="isInEditMode" (click)="onUpadte()" color="primary">Done</button>
+        <button
+        (click)="onRemove()"
+        [disabled]="isInEditMode" mat-raised-button color="warn">Remove</button>
+
+
+
+    </mat-card-actions>
+
+
+
+</mat-card>
